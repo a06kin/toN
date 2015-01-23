@@ -85,6 +85,12 @@ public class Main {
         for (Integer tmp : toRemove) {
             data.remove(tmp);
         }
+
+        System.out.print("Result: ");
+        for (Integer tmp : data) {
+            System.out.print(tmp + ",");
+        }
+        System.out.println();
     }
 
 }
