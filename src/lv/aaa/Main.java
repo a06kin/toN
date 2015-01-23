@@ -137,5 +137,11 @@ public class Main {
                 iter.remove();
             }
         }
+
+        System.out.print("Result: ");
+        for (Integer tmp : data) {
+            System.out.print(tmp + ",");
+        }
+        System.out.println();
     }
 }
