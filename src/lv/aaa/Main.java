@@ -83,7 +83,7 @@ public class Main {
         }
 
         for (Integer tmp : toRemove) {
-            data.remove(tmp);
+            data.removeAll(Collections.singleton(tmp));
         }
 
         System.out.print("Result: ");
