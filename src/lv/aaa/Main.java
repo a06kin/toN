@@ -71,6 +71,20 @@ public class Main {
             System.out.print(tmp + ",");
         }
         System.out.println();
+
+        List<Integer> toRemove = new ArrayList<Integer>();
+
+        for (int i = 0; i < data.size() - 2; ++i) {
+            if (data.get(i).equals(data.get(i + 1))
+                    && data.get(i).equals(data.get(i + 2))
+                    && !toRemove.contains(data.get(i))) {
+                toRemove.add(data.get(i));
+            }
+        }
+
+        for (Integer tmp : toRemove) {
+            data.remove(tmp);
+        }
     }
 
 }
