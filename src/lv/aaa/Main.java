@@ -119,5 +119,23 @@ public class Main {
             System.out.print(tmp + ",");
         }
         System.out.println();
+
+        Map<Integer, Integer> stats = new HashMap<Integer, Integer>();
+
+        for (Integer tmp : data) {
+            Integer stat = stats.get(tmp);
+            if (stat != null) {
+                stats.put(tmp, ++stat);
+            }else{
+                stats.put(tmp, 1);
+            }
+        }
+
+        for (Iterator<Integer> iter = data.iterator(); iter.hasNext(); ) {
+            Integer item = iter.next();
+            if (stats.get(item) >= 3) {
+                iter.remove();
+            }
+        }
     }
 }
