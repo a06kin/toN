@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         treeHight();
         threeOrMoreInRow();
+        threeOrMore();
     }
 
     public static void treeHight() {
@@ -93,4 +94,30 @@ public class Main {
         System.out.println();
     }
 
+    public static void threeOrMore() {
+        List<Integer> data = new ArrayList<Integer>();
+        data.add(1);
+        data.add(1);
+        data.add(1);
+        data.add(2);
+        data.add(2);
+        data.add(2);
+        data.add(3);
+        data.add(4);
+        data.add(4);
+        data.add(1);
+        data.add(2);
+        data.add(3);
+        data.add(3);
+        data.add(3);
+        data.add(4);
+        data.add(5);
+
+        System.out.println(">=3 !row");
+        System.out.print("List:   ");
+        for (Integer tmp : data) {
+            System.out.print(tmp + ",");
+        }
+        System.out.println();
+    }
 }
