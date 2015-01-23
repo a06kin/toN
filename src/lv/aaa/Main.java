@@ -3,7 +3,7 @@ package lv.aaa;
 import lv.aaa.tree.Node;
 import lv.aaa.tree.Tree;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
 
@@ -13,10 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
         treeHight();
+        threeOrMoreInRow();
     }
 
-    public static void treeHight(){
-	    Tree testTree = new Tree();
+    public static void treeHight() {
+        Tree testTree = new Tree();
         testTree.addNode("top", null);
         testTree.addNode("second1", "top");
         testTree.addNode("th1", "second1");
@@ -27,21 +28,49 @@ public class Main {
         testTree.addNode("fo2", "th2");
 
         dfs(testTree, testTree.getNodes().get("top"));
-        System.out.println("size = " + maxLimbSize);
+        System.out.println("Tree height = " + maxLimbSize);
     }
 
-    public static void dfs(Tree tree, Node now){
+    public static void dfs(Tree tree, Node now) {
         ++limbSize;
-        if (limbSize > maxLimbSize){
+        if (limbSize > maxLimbSize) {
             maxLimbSize = limbSize;
         }
         marked.add(now);
 
-        for(Node tmp : now.getChildren()){
-            if (!marked.contains(tmp)){
+        for (Node tmp : now.getChildren()) {
+            if (!marked.contains(tmp)) {
                 dfs(tree, tmp);
             }
         }
         --limbSize;
     }
+
+    public static void threeOrMoreInRow() {
+        List<Integer> data = new ArrayList<Integer>();
+        data.add(1);
+        data.add(1);
+        data.add(1);
+        data.add(2);
+        data.add(2);
+        data.add(2);
+        data.add(3);
+        data.add(1);
+        data.add(2);
+        data.add(4);
+        data.add(4);
+        data.add(3);
+        data.add(3);
+        data.add(3);
+        data.add(4);
+        data.add(5);
+
+        System.out.println(">=3 row");
+        System.out.print("List:   ");
+        for (Integer tmp : data) {
+            System.out.print(tmp + ",");
+        }
+        System.out.println();
+    }
+
 }
